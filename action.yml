@@ -76,3 +76,7 @@ runs:
               printf "::warning file=%s::%s\n", file, $1
           }'
       working-directory: ${{ inputs.path }}
+
+branding:
+  icon:  check-circle
+  color: red
