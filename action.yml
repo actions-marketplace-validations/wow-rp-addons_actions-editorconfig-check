@@ -42,7 +42,7 @@ runs:
 
           echo "##[command]editorconfig-checker -version"
 
-          editorconfig-checker -version
+          ec -version
 
           echo "##[endgroup]"
 
@@ -53,7 +53,7 @@ runs:
         # based on the output of editorconfig-checker. Each line is echoed
         # through to the log as-is in case we hit the annotation limit.
 
-        editorconfig-checker ${{ inputs.args }} -- ${{ inputs.files }} | awk -F':' '
+        ec ${{ inputs.args }} -- ${{ inputs.files }} | awk -F':' '
           { print $0 }
 
           # Matches "path/to/file:" lines; each one will set a variable for
